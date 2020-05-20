@@ -1,7 +1,7 @@
-import 'dart:math';
-
 import 'package:bank_landing_page/painter.dart';
 import 'package:flutter/material.dart';
+import 'circleAV.dart';
+import 'rowExpanded.dart';
 
 class LandingScreen extends StatefulWidget {
   @override
@@ -67,7 +67,7 @@ class _LandingScreenState extends State<LandingScreen> {
                       Text('Tracee E.',
                           style: TextStyle(
                               fontSize: 30, fontWeight: FontWeight.w600)),
-                      Text('Top Actress',
+                      Text('HollyWood Actress',
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.w400)),
                     ],
@@ -77,45 +77,24 @@ class _LandingScreenState extends State<LandingScreen> {
             ),
             SizedBox(height: 20),
             Container(
-              height: height * .12,
+              height: height * .1,
               width: width * .8,
               child: Material(
                 borderRadius: BorderRadius.circular(20),
                 elevation: 12,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text('Instant',
-                              style: TextStyle(
-                                  fontSize: 25, fontWeight: FontWeight.w600)),
-                          Text('Cash available',
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w400,
-                                  color: Colors.grey))
-                        ],
-                      ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text('\$246,000',
-                            style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.w700)),
-                      )
-                    ],
+                  child: RowExpanded(
+                    amount: '250,000',
+                    headerOne: 'Instant',
+                    headerTwo: 'Cash available',
                   ),
                 ),
               ),
             ),
             SizedBox(height: 15),
             Container(
-              height: height * .2,
+              height: height * .18,
               width: width * .8,
               child: Material(
                 borderRadius: BorderRadius.circular(20),
@@ -125,46 +104,44 @@ class _LandingScreenState extends State<LandingScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: <Widget>[
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text('Savings',
-                                  style: TextStyle(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.w600)),
-                              Text('Smart Saving is on',
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.grey))
-                            ],
-                          ),
-                          Align(
-                            alignment: Alignment.centerRight,
-                            child: Text('\$16,000',
-                                style: TextStyle(
-                                    fontSize: 25, fontWeight: FontWeight.w700)),
-                          )
-                        ],
-                      ),
+                      RowExpanded(
+                          amount: '17,000',
+                          headerOne: 'Savings',
+                          headerTwo: 'Smart saving is on'),
                       SizedBox(height: 12),
                       Row(
                         children: <Widget>[
                           SizedBox(width: 7),
                           CircleAV(
                             icon: Icons.card_giftcard,
+                            iconColor: Colors.black,
+                            bgColor: Colors.black,
+                            foreGroundColor: Colors.white,
                           ),
-                          CircleAV(icon: Icons.movie_filter),
-                          CircleAV(icon: Icons.flight_takeoff),
-                          CircleAV(icon: Icons.photo_library),
-                          CircleAvatar(
-                              backgroundColor: Colors.white,
-                              child: Icon(Icons.add, color: Colors.black))
+                          CircleAV(
+                            icon: Icons.movie_filter,
+                            iconColor: Colors.black,
+                            bgColor: Colors.black,
+                            foreGroundColor: Colors.white,
+                          ),
+                          CircleAV(
+                            icon: Icons.flight_takeoff,
+                            iconColor: Colors.black,
+                            bgColor: Colors.black,
+                            foreGroundColor: Colors.white,
+                          ),
+                          CircleAV(
+                            icon: Icons.photo_library,
+                            iconColor: Colors.black,
+                            bgColor: Colors.black,
+                            foreGroundColor: Colors.white,
+                          ),
+                          CircleAV(
+                            icon: Icons.add,
+                            iconColor: Colors.black,
+                            bgColor: Colors.white,
+                            foreGroundColor: Colors.white,
+                          ),
                         ],
                       ),
                     ],
@@ -172,35 +149,61 @@ class _LandingScreenState extends State<LandingScreen> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: height * .18,
+              width: width * .8,
+              child: Material(
+                borderRadius: BorderRadius.circular(20),
+                elevation: 12,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    RowExpanded(
+                      headerOne: 'Investment',
+                      headerTwo: 'Auto-investing is on',
+                      amount: '          ',
+                    ),
+                    SizedBox(height: 12),
+                    Row(
+                      children: <Widget>[
+                        SizedBox(width: 12),
+                        CircleAV(
+                          foreGroundColor: Colors.black,
+                          bgColor: Colors.black,
+                          iconColor: Colors.white,
+                          icon:Icons.insert_chart
+                        ),
+                        CircleAV(
+                          foreGroundColor: Colors.black,
+                          bgColor: Colors.black,
+                          iconColor: Colors.white,
+                          icon:Icons.flash_on
+                        ),
+                        CircleAV(
+                          foreGroundColor: Colors.black,
+                          bgColor: Colors.black,
+                          iconColor: Colors.white,
+                          icon:Icons.grid_on
+                        ),
+                        CircleAV(
+                          foreGroundColor: Colors.white,
+                          bgColor: Colors.white,
+                          iconColor: Colors.black,
+                          icon:Icons.add
+                        ),
+                        
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         )
       ]),
-    );
-  }
-}
-
-class CircleAV extends StatelessWidget {
-  const CircleAV({Key key, this.icon}) : super(key: key);
-  final IconData icon;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Material(
-        shape: CircleBorder(),
-        elevation: 10,
-        child: CircleAvatar(
-          radius: 22,
-          backgroundColor: Colors.black,
-          child: CircleAvatar(
-              radius: 20,
-              backgroundColor: Colors.white,
-              child: Icon(
-                icon,
-                color: Colors.black,
-              )),
-        ),
-      ),
     );
   }
 }
