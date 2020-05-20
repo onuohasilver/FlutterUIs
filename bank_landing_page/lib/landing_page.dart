@@ -14,7 +14,22 @@ class _LandingScreenState extends State<LandingScreen> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFF4FEFE),
+      bottomNavigationBar: BottomAppBar(
+        elevation: null,
+        color: Color(0xFFF8F6F8),
+        child: Container(
+          height: height * .07,
+          color: Colors.transparent,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Icon(Icons.add_a_photo),
+              Icon(Icons.add_a_photo)
+            ],
+          ),
+        ),
+      ),
       body: Stack(children: [
         CustomPaint(
           painter: MyShapePainter(),
@@ -26,7 +41,7 @@ class _LandingScreenState extends State<LandingScreen> {
         Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 60, 40, 40),
+              padding: const EdgeInsets.fromLTRB(0, 60, 40, 20),
               child: Align(
                   alignment: Alignment.topRight,
                   child: Icon(Icons.settings, size: 40)),
@@ -137,7 +152,7 @@ class _LandingScreenState extends State<LandingScreen> {
                           )
                         ],
                       ),
-                      SizedBox(height:12),
+                      SizedBox(height: 12),
                       Row(
                         children: <Widget>[
                           SizedBox(width: 7),
