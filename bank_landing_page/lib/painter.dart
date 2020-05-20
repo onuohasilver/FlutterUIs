@@ -23,22 +23,23 @@ class MyShapePainter extends CustomPainter {
       paint.color = Color(0xFF17B368);
       return canvas.drawCircle(offset, size.width * .45, paint);
     }
-    blackCircle() {
+    blackCircle(opacity,offset) {
       final rect = Rect.fromCenter(
-          center: Offset(size.width*.9, size.height * .54),
+          center: Offset(size.width*.9, size.height * offset),
           width: size.width * .5,
           height: size.height * .35);
       final startAngle =0.0;
       final sweepingAngle = 90.0;
       final useCenter = true;
-      paint.color = Colors.black;
+      paint.color = Colors.black.withOpacity(opacity);
         return canvas.drawArc(rect, startAngle, sweepingAngle, useCenter, paint);
     }
 
 
     yellowCircle();
     greenCircle();
-    blackCircle();
+    blackCircle(.4,.54);
+    blackCircle(.2,.64);
   }
 
   @override

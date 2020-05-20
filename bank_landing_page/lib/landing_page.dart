@@ -14,22 +14,27 @@ class _LandingScreenState extends State<LandingScreen> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color(0xFFF4FEFE),
-      bottomNavigationBar: BottomAppBar(
-        elevation: null,
-        color: Color(0xFFF8F6F8),
-        child: Container(
-          height: height * .07,
-          color: Colors.transparent,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Icon(Icons.add_a_photo),
-              Icon(Icons.add_a_photo)
-            ],
-          ),
-        ),
-      ),
+      backgroundColor: Colors.white,
+      bottomNavigationBar: BottomNavigationBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.library_books,
+                  size: 26,
+                ),
+                title: Text('Finances')),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  size: 26,
+                ),
+                title: Text('Home')),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.bookmark_border, size: 26),
+                title: Text('Book')),
+          ]),
       body: Stack(children: [
         CustomPaint(
           painter: MyShapePainter(),
@@ -44,7 +49,7 @@ class _LandingScreenState extends State<LandingScreen> {
               padding: const EdgeInsets.fromLTRB(0, 60, 40, 20),
               child: Align(
                   alignment: Alignment.topRight,
-                  child: Icon(Icons.settings, size: 40)),
+                  child: Icon(Icons.reorder, size: 40)),
             ),
             SizedBox(height: 20),
             Padding(
@@ -85,7 +90,7 @@ class _LandingScreenState extends State<LandingScreen> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: RowExpanded(
-                    amount: '250,000',
+                    amount: '\$250,000',
                     headerOne: 'Instant',
                     headerTwo: 'Cash available',
                   ),
@@ -105,7 +110,7 @@ class _LandingScreenState extends State<LandingScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       RowExpanded(
-                          amount: '17,000',
+                          amount: '\$17,000',
                           headerOne: 'Savings',
                           headerTwo: 'Smart saving is on'),
                       SizedBox(height: 12),
@@ -115,25 +120,25 @@ class _LandingScreenState extends State<LandingScreen> {
                           CircleAV(
                             icon: Icons.card_giftcard,
                             iconColor: Colors.black,
-                            bgColor: Colors.black,
+                            bgColor: Colors.green,
                             foreGroundColor: Colors.white,
                           ),
                           CircleAV(
                             icon: Icons.movie_filter,
                             iconColor: Colors.black,
-                            bgColor: Colors.black,
+                            bgColor: Colors.green,
                             foreGroundColor: Colors.white,
                           ),
                           CircleAV(
                             icon: Icons.flight_takeoff,
                             iconColor: Colors.black,
-                            bgColor: Colors.black,
+                            bgColor: Colors.green,
                             foreGroundColor: Colors.white,
                           ),
                           CircleAV(
                             icon: Icons.photo_library,
                             iconColor: Colors.black,
-                            bgColor: Colors.black,
+                            bgColor: Colors.green,
                             foreGroundColor: Colors.white,
                           ),
                           CircleAV(
@@ -171,30 +176,25 @@ class _LandingScreenState extends State<LandingScreen> {
                       children: <Widget>[
                         SizedBox(width: 12),
                         CircleAV(
-                          foreGroundColor: Colors.black,
-                          bgColor: Colors.black,
-                          iconColor: Colors.white,
-                          icon:Icons.insert_chart
-                        ),
+                            foreGroundColor: Colors.black,
+                            bgColor: Colors.black,
+                            iconColor: Colors.white,
+                            icon: Icons.insert_chart),
                         CircleAV(
-                          foreGroundColor: Colors.black,
-                          bgColor: Colors.black,
-                          iconColor: Colors.white,
-                          icon:Icons.flash_on
-                        ),
+                            foreGroundColor: Colors.black,
+                            bgColor: Colors.black,
+                            iconColor: Colors.white,
+                            icon: Icons.flash_on),
                         CircleAV(
-                          foreGroundColor: Colors.black,
-                          bgColor: Colors.black,
-                          iconColor: Colors.white,
-                          icon:Icons.grid_on
-                        ),
+                            foreGroundColor: Colors.black,
+                            bgColor: Colors.black,
+                            iconColor: Colors.white,
+                            icon: Icons.grid_on),
                         CircleAV(
-                          foreGroundColor: Colors.white,
-                          bgColor: Colors.white,
-                          iconColor: Colors.black,
-                          icon:Icons.add
-                        ),
-                        
+                            foreGroundColor: Colors.white,
+                            bgColor: Colors.white,
+                            iconColor: Colors.black,
+                            icon: Icons.add),
                       ],
                     ),
                   ],
