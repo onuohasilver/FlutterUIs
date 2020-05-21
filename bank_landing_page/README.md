@@ -3,7 +3,6 @@
 Inspiration: Bank App landing Screen designed by dribble user Vladmir Gruev ['View Original Design here](https://dribbble.com/shots/11477231/attachments/3095022?mode=media) 
 
 
-## Result
 
 
 ## Result
